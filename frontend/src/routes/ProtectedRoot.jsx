@@ -4,6 +4,7 @@ import Layout from "../Layout";
 import Booking from "../pages/Booking";
 import Shop from "../pages/Shop";
 import Contact from "../pages/Contact";
+import Cart from "../pages/Cart";
 
 export const Router= createBrowserRouter([
     {path:"/", element:<Layout/>,
@@ -12,6 +13,7 @@ export const Router= createBrowserRouter([
             {path:"/booking", element:<Booking/>},
             {path:"/shop", element:<Shop/>},
             {path:"/contact", element:<Contact/>},
+            {path:"/cart", element:<Cart/>}
         ]
     }
     
