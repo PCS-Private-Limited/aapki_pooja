@@ -1,0 +1,96 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #ff4da6, #ff85c1);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ffe6f2;
+}
+
+/* Right Section */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search */
+.search {
+  padding: 7px 12px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+/* Icons */
+.icon {
+  background: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Mobile Menu Button */
+.menuBtn {
+  display: none;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #ff66b2;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    display: none;
+  }
+
+  .active {
+    display: flex;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+
+  .search {
+    display: none;
+  }
+}

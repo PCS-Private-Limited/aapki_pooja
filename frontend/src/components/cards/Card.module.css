@@ -1,0 +1,89 @@
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* VARIANTS */
+.default {}
+
+.glass {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.outlined {
+  border: 2px solid #ff4da6;
+  box-shadow: none;
+}
+
+/* IMAGE */
+.imageWrapper {
+  position: relative;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* CONTENT */
+.content {
+  padding: 15px;
+}
+
+.title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: gray;
+}
+
+/* PRICE */
+.priceBox {
+  margin-top: 10px;
+}
+
+.price {
+  font-weight: bold;
+  color: #ff4da6;
+}
+
+.oldPrice {
+  margin-left: 10px;
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* RATING */
+.rating {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* EXTRA */
+.extra {
+  margin-top: 10px;
+}
