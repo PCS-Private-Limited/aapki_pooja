@@ -1,0 +1,219 @@
+.page { animation: fadeUp 0.4s ease both; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.heading { margin-bottom: 1.8rem; }
+.title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.sub { color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 1.5rem;
+  margin-bottom: 1.8rem;
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .layout { grid-template-columns: 1fr; }
+  .title  { font-size: 1.6rem; }
+}
+
+.formCard {
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  box-shadow: 0 2px 10px var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* Address type */
+.typeRow { display: flex; gap: 0.6rem; }
+
+.typeBtn {
+  flex: 1;
+  padding: 0.55rem 0.8rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--blush);
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.typeBtn:hover { border-color: var(--rose); color: var(--rose); }
+
+.typeActive {
+  background: var(--rose) !important;
+  border-color: var(--rose) !important;
+  color: white !important;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .row { grid-template-columns: 1fr; }
+}
+
+.field { display: flex; flex-direction: column; gap: 0.45rem; }
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+}
+
+.req { color: var(--rose); }
+
+.input {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--blush);
+  font-size: 0.9rem;
+  color: var(--ink);
+  transition: all 0.15s;
+}
+
+.input:focus {
+  border-color: var(--rose);
+  background: white;
+  box-shadow: 0 0 0 3px var(--rose-light);
+}
+
+.input::placeholder { color: var(--border); }
+
+.textarea {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--blush);
+  font-size: 0.9rem;
+  color: var(--ink);
+  resize: vertical;
+  transition: all 0.15s;
+  line-height: 1.5;
+}
+
+.textarea:focus {
+  border-color: var(--rose);
+  background: white;
+  box-shadow: 0 0 0 3px var(--rose-light);
+}
+
+.textarea::placeholder { color: var(--border); }
+
+.select {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--blush);
+  font-size: 0.9rem;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.select:focus {
+  border-color: var(--rose);
+  background: white;
+  box-shadow: 0 0 0 3px var(--rose-light);
+}
+
+/* Tip card */
+.tipCard {
+  background: linear-gradient(135deg, var(--rose-soft), var(--petal));
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.tipIcon { font-size: 2.5rem; margin-bottom: 0.7rem; }
+
+.tipTitle {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--rose-deep);
+  margin-bottom: 0.8rem;
+}
+
+.tipList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tipList li {
+  font-size: 0.8rem;
+  color: var(--charcoal);
+  font-weight: 400;
+  line-height: 1.4;
+  padding-left: 1.2rem;
+  position: relative;
+  text-align: left;
+}
+
+.tipList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--rose);
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+/* Actions */
+.actions { display: flex; justify-content: space-between; align-items: center; }
+
+.backBtn {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border);
+  background: white;
+  transition: all 0.15s;
+}
+
+.backBtn:hover { color: var(--rose); border-color: var(--rose); }
+
+.nextBtn {
+  background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+  color: white;
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.88rem 2.2rem;
+  border-radius: var(--radius);
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.nextBtn:hover:not(:disabled) {
+  transform: translateX(2px);
+  box-shadow: 0 8px 24px var(--shadow-lg);
+}
+
+.nextBtn:disabled { opacity: 0.35; cursor: not-allowed; }

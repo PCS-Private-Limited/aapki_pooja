@@ -38,59 +38,100 @@
 .right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
 }
 
-/* Search */
-.search {
+/* ================= SEARCH ================= */
+
+/* Desktop Search */
+.desktopSearch {
   padding: 7px 12px;
   border-radius: 20px;
   border: none;
   outline: none;
+  width: 180px;
+  transition: 0.3s;
 }
 
-/* Icons */
-.icon {
-  background: white;
+/* Mobile Search (inside menu) */
+.mobileSearch {
+  padding: 8px 12px;
+  border-radius: 20px;
   border: none;
-  padding: 6px 10px;
+  outline: none;
+  margin-bottom: 5px;
+  width: 90%;
+}
+
+/* Hide mobile search icon by default (desktop) */
+.searchIcon {
+  display: none;
+}
+
+/* ================= ICONS ================= */
+
+.icon {
+  background: rgb(247, 228, 245);
+  border: none;
+  padding: 6px;
   border-radius: 50%;
   cursor: pointer;
   font-size: 16px;
+  transition: 0.2s;
 }
 
-/* Mobile Menu Button */
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/* ================= MENU BUTTON ================= */
+
 .menuBtn {
   display: none;
   font-size: 20px;
   background: none;
+  box-shadow: 1px 1px 4px #fcc4df;
   border: none;
   color: white;
   cursor: pointer;
 }
 
-/* Responsive */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 768px) {
+  /* Nav dropdown */
+  .header{
+      padding: 15px 10px;
+  }
   .nav {
     position: absolute;
     top: 70px;
     right: 0;
-    background: #ff66b2;
+    background: #fe6ab4;
     flex-direction: column;
-    width: 200px;
+    width: 55%;
+    box-shadow: 1px 1px 6px #ffe6f2;
     padding: 20px;
     display: none;
+    border-radius: 10px 0 0 10px;
   }
 
   .active {
     display: flex;
   }
 
+  /* Show menu button */
   .menuBtn {
     display: block;
   }
 
-  .search {
+  /* ❌ Hide desktop search */
+  .desktopSearch {
     display: none;
+  }
+
+  /* ✅ Show search icon */
+  .searchIcon {
+    display: block;
   }
 }
