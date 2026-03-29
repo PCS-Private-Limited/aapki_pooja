@@ -1,0 +1,74 @@
+.wrap {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0.9rem 1.5rem 1.4rem;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.step:last-child { flex: 0; }
+
+.dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--white);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.dot.active {
+  background: var(--rose);
+  border-color: var(--rose);
+  color: white;
+  box-shadow: 0 0 0 5px var(--rose-light);
+}
+
+.dot.done {
+  background: var(--rose-deep);
+  border-color: var(--rose-deep);
+  color: white;
+}
+
+.label {
+  position: absolute;
+  top: calc(100% + 6px);
+  font-size: 0.68rem;
+  color: var(--muted);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.activeLabel { color: var(--rose); font-weight: 700; }
+.doneLabel   { color: var(--rose-deep); }
+
+.line {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+  margin: 0 4px;
+  transition: background 0.4s ease;
+}
+
+.lineDone { background: var(--rose-deep); }
