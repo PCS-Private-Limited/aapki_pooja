@@ -9,8 +9,8 @@ const MOCK_ORDERS = {
     placedOn: '25 March 2025',
     estimatedDelivery: '30 March 2025',
     items: [
-      { emoji: '👘', name: 'Floral Wrap Kurta', size: 'M', color: 'Rose Pink', qty: 1, price: 1299 },
-      { emoji: '👗', name: 'Georgette Palazzo Set', size: 'L', color: 'Hot Pink', qty: 1, price: 2199 },
+      { image: 'https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=400&h=520&fit=crop&q=80', name: 'Floral Wrap Kurta', size: 'M', color: 'Rose Pink', qty: 1, price: 1299 },
+      { image: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&h=520&fit=crop&q=80', name: 'Georgette Palazzo Set', size: 'L', color: 'Hot Pink', qty: 1, price: 2199 },
     ],
     total: 3498,
     address: { name: 'Priya Sharma', street: '12, Rose Garden, Vijay Nagar', city: 'Indore', state: 'Madhya Pradesh', pincode: '452001' },
@@ -18,10 +18,10 @@ const MOCK_ORDERS = {
     awb: 'DLV9876543210',
     timeline: [
       { status: 'confirmed', label: 'Order Confirmed', desc: 'Your order has been successfully placed', time: '25 Mar, 10:32 AM', done: true },
-      { status: 'packed',    label: 'Order Packed',    desc: 'Your order is packed and ready', time: '25 Mar, 4:15 PM',  done: true },
-      { status: 'shipped',   label: 'Shipped',         desc: 'Dispatched with Delhivery courier', time: '26 Mar, 9:00 AM',  done: true, active: true },
-      { status: 'out',       label: 'Out for Delivery', desc: 'Will be delivered today', time: 'Expected: 30 Mar', done: false },
-      { status: 'delivered', label: 'Delivered',        desc: 'Package will be delivered', time: 'Expected: 30 Mar', done: false },
+      { status: 'packed', label: 'Order Packed', desc: 'Your order is packed and ready', time: '25 Mar, 4:15 PM', done: true },
+      { status: 'shipped', label: 'Shipped', desc: 'Dispatched with Delhivery courier', time: '26 Mar, 9:00 AM', done: true, active: true },
+      { status: 'out', label: 'Out for Delivery', desc: 'Will be delivered today', time: 'Expected: 30 Mar', done: false },
+      { status: 'delivered', label: 'Delivered', desc: 'Package will be delivered', time: 'Expected: 30 Mar', done: false },
     ],
   },
   'RSE654321': {
@@ -30,7 +30,22 @@ const MOCK_ORDERS = {
     placedOn: '18 March 2025',
     estimatedDelivery: '22 March 2025',
     items: [
-      { emoji: '🥻', name: 'Embroidered Anarkali', size: 'S', color: 'Purple', qty: 1, price: 3499 },
+      {
+        image: 'https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=400&h=520&fit=crop&q=80',
+        name: 'Floral Wrap Kurta',
+        size: 'M',
+        color: 'Rose Pink',
+        qty: 1,
+        price: 1299
+      },
+      {
+        image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&h=520&fit=crop&q=80",
+        name: 'Georgette Palazzo Set',
+        size: 'L',
+        color: 'Hot Pink',
+        qty: 1,
+        price: 2199
+      },
     ],
     total: 3499,
     address: { name: 'Priya Sharma', street: '12, Rose Garden, Vijay Nagar', city: 'Indore', state: 'Madhya Pradesh', pincode: '452001' },
@@ -38,28 +53,28 @@ const MOCK_ORDERS = {
     awb: 'BD1234567890',
     timeline: [
       { status: 'confirmed', label: 'Order Confirmed', desc: 'Your order has been successfully placed', time: '18 Mar, 2:10 PM', done: true },
-      { status: 'packed',    label: 'Order Packed',    desc: 'Your order is packed and ready', time: '19 Mar, 11:00 AM', done: true },
-      { status: 'shipped',   label: 'Shipped',         desc: 'Dispatched with BlueDart courier', time: '20 Mar, 8:30 AM', done: true },
-      { status: 'out',       label: 'Out for Delivery', desc: 'Delivery person has picked up', time: '22 Mar, 9:15 AM', done: true },
-      { status: 'delivered', label: 'Delivered ✓',     desc: 'Package successfully delivered!', time: '22 Mar, 1:45 PM', done: true, active: true },
+      { status: 'packed', label: 'Order Packed', desc: 'Your order is packed and ready', time: '19 Mar, 11:00 AM', done: true },
+      { status: 'shipped', label: 'Shipped', desc: 'Dispatched with BlueDart courier', time: '20 Mar, 8:30 AM', done: true },
+      { status: 'out', label: 'Out for Delivery', desc: 'Delivery person has picked up', time: '22 Mar, 9:15 AM', done: true },
+      { status: 'delivered', label: 'Delivered ✓', desc: 'Package successfully delivered!', time: '22 Mar, 1:45 PM', done: true, active: true },
     ],
   },
 }
 
 const STATUS_CONFIG = {
-  confirmed: { color: '#f43f8e', bg: '#fce7f3', label: 'Confirmed',      icon: '✓' },
-  packed:    { color: '#f59e0b', bg: '#fef3c7', label: 'Packed',         icon: '📦' },
-  shipped:   { color: '#3b82f6', bg: '#dbeafe', label: 'Shipped',        icon: '🚚' },
-  out:       { color: '#8b5cf6', bg: '#ede9fe', label: 'Out for Delivery', icon: '🛵' },
-  delivered: { color: '#22c55e', bg: '#dcfce7', label: 'Delivered',      icon: '🏠' },
+  confirmed: { color: '#f43f8e', bg: '#fce7f3', label: 'Confirmed', icon: '✓' },
+  packed: { color: '#f59e0b', bg: '#fef3c7', label: 'Packed', icon: '📦' },
+  shipped: { color: '#3b82f6', bg: '#dbeafe', label: 'Shipped', icon: '🚚' },
+  out: { color: '#8b5cf6', bg: '#ede9fe', label: 'Out for Delivery', icon: '🛵' },
+  delivered: { color: '#22c55e', bg: '#dcfce7', label: 'Delivered', icon: '🏠' },
 }
 
 export default function TrackOrder({ orders = [], onBack }) {
-  const [inputId, setInputId]   = useState('')
+  const [inputId, setInputId] = useState('')
   const [searched, setSearched] = useState(false)
-  const [result, setResult]     = useState(null)
+  const [result, setResult] = useState(null)
   const [notFound, setNotFound] = useState(false)
-  const [loading, setLoading]   = useState(false)
+  const [loading, setLoading] = useState(false)
   const [activeOrder, setActiveOrder] = useState(orders.length > 0 ? orders[0] : null)
 
   const handleSearch = async (e) => {
@@ -151,7 +166,11 @@ export default function TrackOrder({ orders = [], onBack }) {
                 </div>
                 <div className={styles.orderCardItems}>
                   {order.items.slice(0, 2).map((item, i) => (
-                    <span key={i} className={styles.orderCardEmoji}>{item.emoji}</span>
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className={styles.orderCardImage}
+                    />
                   ))}
                   {order.items.length > 2 && <span className={styles.orderCardMore}>+{order.items.length - 2}</span>}
                 </div>
@@ -253,7 +272,13 @@ export default function TrackOrder({ orders = [], onBack }) {
               <div className={styles.sectionTitle}>Order Items</div>
               {displayOrder.items.map((item, i) => (
                 <div key={i} className={styles.itemRow}>
-                  <div className={styles.itemEmoji}>{item.emoji}</div>
+                  <div className={styles.itemImageBox}>
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className={styles.itemImage}
+                    />
+                  </div>
                   <div className={styles.itemInfo}>
                     <div className={styles.itemName}>{item.name}</div>
                     <div className={styles.itemMeta}>{item.size} · {item.color} · x{item.qty}</div>

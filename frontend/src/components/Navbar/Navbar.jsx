@@ -39,7 +39,7 @@ export default function Navbar({ totalItems, wishlistCount, onCartClick, onWishl
                 {user.name.charAt(0).toUpperCase()}
               </div>
               <div className={styles.userDropdown}>
-                <div className={styles.userName}>👋 Hi, {user.name.split(' ')[0]}!</div>
+                <div className={styles.userName}>{user.name.split(' ')[0]}!</div>
                 <div className={styles.userEmail}>{user.email}</div>
                 <hr className={styles.dropDivider} />
                 <button className={styles.dropItem} onClick={onTrackClick}>📦 My Orders</button>

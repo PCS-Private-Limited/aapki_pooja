@@ -75,18 +75,21 @@
 .imageBox {
   position: relative;
   background: var(--rose-soft);
-  height: 160px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* IMPORTANT */
 }
 
-.emoji {
-  font-size: 4rem;
-  transition: transform 0.3s;
+/* 🔥 FIXED IMAGE */
+.productImage {
+  max-width: 100%;
+  max-height: 90%;
+  object-fit: contain; /* cover nahi */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
-
-.card:hover .emoji { transform: scale(1.1) rotate(-3deg); }
 
 .discountBadge {
   position: absolute;
@@ -193,7 +196,11 @@
 }
 
 /* Footer */
-.footer { display: flex; }
+.footer { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .backBtn {
   font-size: 0.88rem;

@@ -75,7 +75,20 @@
   color: var(--ink);
   margin-bottom: 0.4rem;
 }
+.itemImageContainer {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fce7f3;
+  flex-shrink: 0;
+}
 
+.itemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
 .itemMeta { display: flex; gap: 0.4rem; margin-bottom: 0.5rem; }
 
 .metaTag {
