@@ -148,7 +148,7 @@ export default function AuthModal({ onClose, onAuth, trigger }) {
           </button>
 
           {/* Divider */}
-          <div className={styles.divider}><span>ya</span></div>
+          <div className={styles.divider}><span>OR</span></div>
 
           {/* Social login */}
           <div className={styles.socialRow}>
