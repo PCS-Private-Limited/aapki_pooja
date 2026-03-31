@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.css";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   return (
     <header className={styles.header}>
@@ -15,24 +17,55 @@ function Header() {
 
       {/* Navigation */}
       <nav className={`${styles.nav} ${menuOpen ? styles.active : ""}`}>
+        
+        {/* Mobile Search */}
+        {searchOpen && (
+          <input
+            type="text"
+            placeholder="Search products..."
+            className={styles.mobileSearch}
+          />
+        )}
+
         <Link to="/">Home</Link>
-        <Link to="/shop">Shop</Link>
         <Link to="/categories">Categories</Link>
+        <Link to="/my_oders">My Oder</Link>
         <Link to="/contact">Contact</Link>
       </nav>
 
       {/* Right Section */}
       <div className={styles.right}>
+        
+        {/* ✅ Desktop Search */}
         <input
           type="text"
           placeholder="Search products..."
-          className={styles.search}
+          className={styles.desktopSearch}
         />
 
-        <button className={styles.icon}>❤️</button>
-        <button className={styles.icon}>🛒</button>
+        {/* ✅ Mobile Search Icon */}
+        <button
+          className={`${styles.icon} ${styles.searchIcon}`}
+          onClick={() => {
+            setMenuOpen(true);
+            setSearchOpen(!searchOpen);
+          }}
+        >
+          🔍
+        </button>
 
-        {/* Mobile Menu Button */}
+        {/* Wishlist */}
+        <button className={styles.icon}>❤️</button>
+
+        {/* Cart */}
+        <button
+          className={styles.icon}
+          onClick={() => navigate("/cart")}
+        >
+          🛒
+        </button>
+
+        {/* Mobile Menu */}
         <button
           className={styles.menuBtn}
           onClick={() => setMenuOpen(!menuOpen)}

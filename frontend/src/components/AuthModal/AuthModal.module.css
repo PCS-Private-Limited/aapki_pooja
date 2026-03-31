@@ -1,0 +1,325 @@
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 10, 18, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Modal box */
+.modal {
+  background: rgb(250, 249, 249);
+  border-radius: var(--radius);
+  padding: 2.2rem 2rem 1.8rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(157, 19, 79, 0.22), 0 4px 16px rgba(0,0,0,0.12);
+  animation: slideUp 0.35s cubic-bezier(0.34, 1.36, 0.64, 1);
+  border: 1.5px solid var(--border);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Close */
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--blush);
+  color: var(--muted);
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.closeBtn:hover {
+  background: var(--rose);
+  color: white;
+  border-color: var(--rose);
+  transform: rotate(90deg);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.logoIcon {
+  font-size: 1.6rem;
+  color: var(--rose);
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--rose);
+  letter-spacing: -0.02em;
+}
+
+/* Trigger message */
+.triggerMsg {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: var(--rose-soft);
+  border: 1px solid var(--rose-light);
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.4rem;
+  font-weight: 500;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background: var(--blush);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.55rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--muted);
+  border-radius: 9px;
+  z-index: 1;
+  transition: color 0.2s;
+  text-align: center;
+}
+
+.tabActive { color: var(--rose-deep); }
+
+.tabSlider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background: white;
+  border-radius: 9px;
+  box-shadow: 0 2px 8px var(--shadow-sm);
+  transition: transform 0.25s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.tabSliderRight { transform: translateX(100%); }
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.field { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  letter-spacing: 0.04em;
+}
+
+.input {
+  padding: 0.78rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--blush);
+  font-size: 0.9rem;
+  color: var(--ink);
+  transition: all 0.15s;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: var(--rose);
+  background: white;
+  box-shadow: 0 0 0 3px var(--rose-light);
+  outline: none;
+}
+
+.input::placeholder { color: #d0a0b8; }
+
+/* Password field */
+.passWrap { position: relative; }
+
+.passWrap .input { padding-right: 3rem; }
+
+.eyeBtn {
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Forgot */
+.forgotRow { display: flex; justify-content: flex-end; margin-top: -0.4rem; }
+
+.forgotBtn {
+  font-size: 0.78rem;
+  color: var(--rose);
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.forgotBtn:hover { opacity: 0.7; }
+
+/* Error */
+.errorMsg {
+  background: #fff0f0;
+  border: 1px solid #fca5a5;
+  border-radius: 10px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.8rem;
+  color: #dc2626;
+  font-weight: 500;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-6px); }
+  75%       { transform: translateX(6px); }
+}
+
+/* Submit button */
+.submitBtn {
+  width: 100%;
+  padding: 0.92rem;
+  background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--radius);
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+  margin-top: 0.2rem;
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow-lg);
+}
+
+.submitBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.submitLoading {
+  background: linear-gradient(135deg, var(--rose-mid), var(--rose)) !important;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Social buttons */
+.socialRow { display: flex; gap: 0.6rem; }
+
+.socialBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  transition: all 0.15s;
+}
+
+.socialBtn:hover {
+  border-color: var(--rose);
+  color: var(--rose);
+  background: var(--rose-soft);
+}
+
+.socialBtn span { font-weight: 800; }
+
+/* Switch text */
+.switchText {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+.switchBtn {
+  color: var(--rose);
+  font-weight: 700;
+  font-size: 0.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.switchBtn:hover { opacity: 0.75; }

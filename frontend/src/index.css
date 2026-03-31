@@ -1,3 +1,87 @@
-body{
-  background-color: #fcedf5;
+:root {
+  /* Pink Palette */
+  --rose: #f43f8e;
+  --rose-deep: #d4166a;
+  --rose-light: #fce7f3;
+  --rose-soft: #fdf2f8;
+  --rose-mid: #fb7ab5;
+  --blush: #fff0f7;
+  --petal: #ffe4f0;
+
+  /* Neutrals */
+  --ink: #1a0a12;
+  --charcoal: #3d2232;
+  --muted: #9d7a8a;
+  --border: #f0d0e4;
+  --white: #ffffff;
+
+  /* Shadows */
+  --shadow-sm: rgba(244, 63, 142, 0.08);
+  --shadow-md: rgba(244, 63, 142, 0.15);
+  --shadow-lg: rgba(244, 63, 142, 0.25);
+
+  --font-display: 'Poppins', 'Segoe UI', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--rose-soft);
+  color: var(--ink);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--rose-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rose-mid);
+  border-radius: 10px;
 }
